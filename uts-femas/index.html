@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Tiket Konser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Formulir Pemesanan Tiket</h1>
+            <p>Pesan tiket konser atau film favorit Anda di sini!</p>
+        </header>
+
+        <form id="formPemesanan" action="proses.php" method="POST">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama">
+                <small class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" name="email">
+                <small class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="acara">Pilih Acara</label>
+                <select id="acara" name="acara">
+                    <option value="">-- Pilih Acara --</option>
+                    <option value="Konser Musik Rock" data-harga="500000">Konser Musik Rock - Rp 500.000</option>
+                    <option value="Festival Film Indonesia" data-harga="250000">Festival Film Indonesia - Rp 250.000</option>
+                    <option value="Pentas Seni Tradisional" data-harga="150000">Pentas Seni Tradisional - Rp 150.000</option>
+                </select>
+                <small class="error-message"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="jumlah">Jumlah Tiket</label>
+                <input type="number" id="jumlah" name="jumlah" min="1" max="10">
+                <small class="error-message"></small>
+            </div>
+
+            <button type="submit" id="tombolKirim">Pesan Sekarang</button>
+        </form>
+
+        <div id="hasil-ajax"></div>
+    </div>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
